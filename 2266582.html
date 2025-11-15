@@ -30,7 +30,7 @@
   (async function(){
     const showErr = msg => { const el = document.getElementById('err'); el.textContent = msg; el.style.display='block'; };
     try {
-      const DATA_BASE = "https://raw.githubusercontent.com/PMO-Monitoreo/PROGRAMATICA/refs/heads/main/2266582.json";
+      const DATA_BASE = "https://raw.githubusercontent.com/PVDMonitoreo/PROGRAMATICA/refs/heads/main/2266582.json";            
       const DATA_URL = DATA_BASE + "?nocache=" + Date.now(); // rompe caché
 
       const osm  = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 20, attribution:'&copy; OSM'});
