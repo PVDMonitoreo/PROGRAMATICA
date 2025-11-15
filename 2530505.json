@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.32886239699997,
+          -6.926168051999979
+        ]
+      },
+      "properties": {
+        "name": "2530505",
+        "description_html": "<html xmlns:fo=\"http://www.w3.org/1999/XSL/Format\" xmlns:msxsl=\"urn:schemas-microsoft-com:xslt\">\n\n<head>\n\n<META http-equiv=\"Content-Type\" content=\"text/html\">\n\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n\n</head>\n\n<body style=\"margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;\">\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>2530505</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td style=\"width:25%\"><b>CÓDIGO ÚNICO</b></td>\n\n<td>2530505</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>NOMBRE</b></td>\n\n<td>MEJORAMIENTO Y AMPLIACION DE LOS SERVICIOS EDUCATIVOS DE LA IE N° 0155 PEDRO JULIO NORIEGA DE LA LOCALIDAD DE TOCACHE, DISTRITO DE TOCACHE, PROVINCIA DE TOCACHE, DEPARTAMENTO DE SAN MARTÍN</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>NIVEL DE GOBIERNO</b></td>\n\n<td>GOBIERNOS LOCALES</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>SECTOR</b></td>\n\n<td>EDUCACION</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>UNIDAD FORMULADORA</b></td>\n\n<td>MUNICIPALIDAD PROVINCIAL DE TOCACHE - SAN MARTÍN</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>UNIDAD EJECUTORA</b></td>\n\n<td>MUNICIPALIDAD PROVINCIAL DE TOCACHE - SAN MARTÍN</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>SITUACIÓN</b></td>\n\n<td>VIABLE</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>TIPOLOGÍA</b></td>\n\n<td>NO APLICA</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>FASE</b></td>\n\n<td>NO APLICA</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>MONTO VIABLE (S/)</b></td>\n\n<td>17538407.0</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>DEPARTAMENTO</b></td>\n\n<td>SAN MARTÍN</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>PROVINCIA</b></td>\n\n<td>TOCACHE</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>DISTRITO</b></td>\n\n<td>TOCACHE</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>SECTOR SNIP</b></td>\n\n<td>EDUCACION</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>FECHA REGISTRO</b></td>\n\n<td>2009-08-21</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>ESTADO</b></td>\n\n<td>VF</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>TIPO DE REGISTRO</b></td>\n\n<td>PIP</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>FUENTE</b></td>\n\n<td>GO</td>\n\n</tr>\n\n<tr>\n\n<td>CVA_CARTER</td>\n\n<td>PROGRAMATICA</td>\n\n</tr>\n\n<tr bgcolor=\"#D4E4F3\">\n\n<td colspan=\"2\">\n\n<table style=\"text-align:center;font-weight:bold;border-width:1px;border-style:solid;border-color:#9CBCE2;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr style=\"text-align:center;font-weight:bold;background:#9CBCE2\">\n\n<td>CADENA FUNCIONAL</td>\n\n</tr>\n\n<tr>\n\n<td>\n\n<table style=\"font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px\">\n\n<tr>\n\n<td style=\"width:25%\"><b>FUNCIÓN</b></td>\n\n<td>EDUCACION</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>DIVISIÓN FUNCIONAL</b></td>\n\n<td>EDUCACION BASICA</td>\n\n</tr>\n\n<tr>\n\n<td style=\"width:25%\"><b>GRUPO FUNCIONAL</b></td>\n\n<td>ACCIONES COMUNES EDUCACION BASICA</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</td>\n\n</tr>\n\n</table>\n\n</body>\n\n</html>"
+      }
+    }
+  ]
+}
