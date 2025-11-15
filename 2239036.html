@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa L2 – Poligonal</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    html, body { margin:0; padding:0; }
+    #map { height: 100vh; width: 100%; }
+    .loading {
+      position: fixed; left:12px; top:12px; z-index:1000;
+      background:#fff; padding:6px 10px; border-radius:6px;
+      box-shadow:0 1px 4px rgba(0,0,0,.2); font:12px/1.2 sans-serif;
+    }
+    .err {
+      position: fixed; left:12px; bottom:12px; right:12px; z-index:1000;
+      background:#ffe9e9; color:#8b0000; padding:8px 10px; border-radius:6px;
+      box-shadow:0 1px 4px rgba(0,0,0,.2); font:12px/1.2 sans-serif; display:none;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="loading" class="loading">Cargando datos…</div>
+  <div id="err" class="err"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+  (async function(){
+    const showErr = msg => { const el = document.getElementById('err'); el.textContent = msg; el.style.display='block'; };
+    try {
+      const DATA_BASE = "https://raw.githubusercontent.com/PMO-Monitoreo/PROGRAMATICA/refs/heads/main/2239036.json";
+      const DATA_URL = DATA_BASE + "?nocache=" + Date.now(); // rompe caché
+
+      const osm  = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 20, attribution:'&copy; OSM'});
+      const esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 20, attribution:'Esri'});
+
+      const map = L.map('map', {layers:[osm], center:[-12.05,-77.05], zoom:11});
+      L.control.layers({"OpenStreetMap":osm,"Satelital (Esri)":esri}, {}, {collapsed:false}).addTo(map);
+      L.control.scale().addTo(map);
+
+      const pointsLayer = L.layerGroup().addTo(map);
+      const linesLayer  = L.layerGroup().addTo(map);
+      const polysLayer  = L.layerGroup().addTo(map);
+
+      const lineStyle = {color:"#1464ff", weight:6, opacity:.9, lineCap:"round", lineJoin:"round"};
+      const polyStyle = {color:"#ff7f0e", weight:2, opacity:.9, fillColor:"#ff7f0e", fillOpacity:.25};
+      const popup = p => p ? Object.entries(p).map(([k,v])=>`${k}: ${v}`).join("<br>") : "Sin datos";
+
+      console.log("Descargando GeoJSON:", DATA_URL);
+      const res = await fetch(DATA_URL, {cache:"no-store"});
+      if (!res.ok) throw new Error(`GeoJSON HTTP ${res.status}`);
+      const geojson = await res.json();
+      console.log("GeoJSON cargado. Tipo raíz:", geojson.type);
+
+      const bounds = L.latLngBounds();
+
+      L.geoJSON(geojson, {
+        filter: f => f.geometry && f.geometry.type === "Point",
+        pointToLayer: (f, latlng) => L.circleMarker(latlng, {radius:5, color:"#005bbb", weight:2, fillColor:"#cfe2ff", fillOpacity:.9}).bindPopup(popup(f.properties)),
+        onEachFeature: (f, layer) => bounds.extend(layer.getLatLng())
+      }).addTo(pointsLayer);
+
+      L.geoJSON(geojson, {
+        filter: f => f.geometry && /LineString$/i.test(f.geometry.type),
+        style: () => lineStyle,
+        onEachFeature: (f, layer) => { layer.bindPopup(popup(f.properties)); bounds.extend(layer.getBounds()); }
+      }).addTo(linesLayer);
+
+      L.geoJSON(geojson, {
+        filter: f => f.geometry && /Polygon$/i.test(f.geometry.type),
+        style: () => polyStyle,
+        onEachFeature: (f, layer) => { layer.bindPopup(popup(f.properties)); bounds.extend(layer.getBounds()); }
+      }).addTo(polysLayer);
+
+      if (bounds.isValid()) map.fitBounds(bounds, {padding:[30,30], maxZoom: 15});
+
+      document.getElementById('loading').style.display = 'none';
+    } catch (e) {
+      console.error(e);
+      document.getElementById('loading').style.display = 'none';
+      showErr("Error cargando mapa: " + (e.message || e));
+    }
+  })();
+  </script>
+</body>
+</html>
